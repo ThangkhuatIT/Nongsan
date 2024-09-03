@@ -19,16 +19,22 @@
                     <label class="text-nowrap">Chọn danh mục :</label>
                     <div class="">
                         <select class="form-select form-select-sm" aria-label="Small select" required="" name="category">
-                            <option value="0" selected="">Sự kiện</option>
-                            <option value="1">Tin tức</option>
-                            <option value="2">Hướng Dẫn</option>
-                            <option value="3">Hoạt Động</option>
+                            @foreach ($c_aticles as $c_aticle)
+                            <option value={{ $c_aticle->name }} selected="">{{ $c_aticle->name }}</option>
+                            @endforeach
                         </select>
                     </div>
-
-
                 </div>
-
+                <div class="gap-2 mb-6 d-flex flex-nowrap">
+                    <label class="text-nowrap">Chọn tag:</label>
+                    <div class="">
+                        <select class="form-select form-select-sm" aria-label="Small select" required="" name="tag">
+                            @foreach ($tags as $tag)
+                                <option value={{ $tag->name }} selected="">{{ $tag->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
                 <div class="mb-3">
                     <label for="image">Chọn ảnh để đăng bài:</label>
                     <input type="file" class="form-control-file" id="image" name="file_upload" required="">
@@ -42,6 +48,7 @@
             </div>
         </form>
     </div>
+    @include('partials.errors')
 @endsection
 @section('js')
     <script>

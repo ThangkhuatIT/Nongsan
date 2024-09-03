@@ -113,7 +113,7 @@
         <a href="#" aria-label="logo image"><img src="assets/images/logo-light.png" width="155" alt="" /></a>
     </div>
     <!-- /.logo-box -->
-    
+
     <div class="mobile-nav__container"></div>
     <!-- /.mobile-nav__container -->
 

@@ -16,13 +16,14 @@ class Blog extends Model
         'context',
         'image',
         'slug',
+        'tag,'
     ];
     public function showNews()
     {
         $blogs = DB::connection('mysql')->table('blogs')->paginate(10);
         return $blogs;
     }
-    public function createBlog($category, $title, $context, $image, $slug)
+    public function createBlog($category, $title, $context, $image, $slug, $tag)
     {
         $blogs = DB::connection('mysql')->table('blogs')
             ->insert([
@@ -31,7 +32,17 @@ class Blog extends Model
                 'context' => $context,
                 'image' => $image,
                 'slug' => $slug,
+                'tag' => $tag,
             ]);
         return $blogs;
+    }
+    public function deleteBlog($id)
+    {
+        $blog = Blog::find($id);
+        if ($blog) {
+            $deleted =  $blog->delete();
+            if ($deleted) return true;
+        }
+        return false;
     }
 }

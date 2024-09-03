@@ -23,9 +23,14 @@ class Article_CategoriesModel extends Model
     {
         $category = Article_CategoriesModel::find($id);
         if ($category) {
-            $deleted =   $category->delete();
+            $deleted =  $category->delete();
             if ($deleted) return true;
         }
         return false;
+    }
+    public function showC_aticle()
+    {
+        $article_categories = DB::connection('mysql')->table('article_categories')->get();
+        return $article_categories;
     }
 }

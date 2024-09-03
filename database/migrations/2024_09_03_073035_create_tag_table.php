@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -14,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('blogs', function (Blueprint $table) {
+        Schema::create('tag', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('category');
-            $table->string('title');
-            $table->string('image');
-            $table->string('slug');
-            $table->longText('context');
-            $table->string('tag');
+            $table->string('name');
             $table->timestamp('created_at')->useCurrent();
         });
     }
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blogs');
+        Schema::dropIfExists('tag');
     }
 };

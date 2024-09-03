@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Blog;
+use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Support\ServiceProvider;
 
@@ -17,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind('user', User::class);
         $this->app->bind('blog', Blog::class);
+        $this->app->bind('tag', Tag::class);
     }
 
     /**

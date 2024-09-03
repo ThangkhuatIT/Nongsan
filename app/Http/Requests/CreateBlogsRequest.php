@@ -26,8 +26,8 @@ class CreateBlogsRequest extends FormRequest
         return [
             'file_upload' => 'required',
             'category' => 'required',
+            'tag' => 'required',
             'title' => 'required',
-            'image' => 'required',
         ];
     }
     /**
@@ -41,7 +41,7 @@ class CreateBlogsRequest extends FormRequest
             'file_upload.required' => 'Chưa tải ảnh lên',
             'category.required' => 'Chưa chọn thể loại bài viết',
             'title.required' => 'Bài viết chưa có tiêu đề',
-            // 'image.required' => 'chưa tải ảnh lên',
+            'tag.required' => 'Bài viết chưa có tiêu đề',
         ];
     }
 }

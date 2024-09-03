@@ -9,6 +9,28 @@
     <link rel="shortcut icon" type="image/png" href="{{ asset('assetdashboard/images/logos/seodashlogo.png') }}" />
     <link rel="stylesheet" href="{{ asset('assetdashboard/css/styles.min.css') }}" />
     @yield('header')
+    <style>
+        .body-wrapper {
+            position: relative;
+            /* Đặt vị trí tương đối cho thẻ cha */
+            min-height: 100vh;
+            /* Đảm bảo chiều cao tối thiểu của thẻ cha là 100% chiều cao viewport */
+        }
+
+        .footer {
+            position: absolute;
+            /* Đặt vị trí tuyệt đối cho footer */
+            bottom: 0;
+            /* Đặt footer ở dưới cùng của thẻ cha */
+            width: 100%;
+            /* Đảm bảo footer chiếm toàn bộ chiều rộng của thẻ cha */
+        }
+
+        .h-30px {
+            height: 100px;
+            /* Đặt chiều cao là 30px */
+        }
+    </style>
 </head>
 
 <body>
@@ -44,9 +66,9 @@
                                         <a href="javascript:void(0)"
                                             class="d-flex align-items-center gap-2 dropdown-item">
                                             <i class="ti ti-user fs-6"></i>
-                                            <p class="mb-0 fs-3">{{session('user')->username}}</p>
+                                            <p class="mb-0 fs-3">{{ session('user')->username }}</p>
                                         </a>
-                                        <a href="{{route('auth.logout')}}"
+                                        <a href="{{ route('auth.logout') }}"
                                             class="btn btn-outline-primary mx-3 mt-2 d-block">Đăng xuất</a>
                                     </div>
                                 </div>
