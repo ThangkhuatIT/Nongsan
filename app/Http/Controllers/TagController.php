@@ -23,13 +23,13 @@ class TagController extends Controller
         $name = $request->name;
         $tag = $this->tag->createTag($name);
         if ($tag) {
-            return redirect()->route('');
+            return redirect()->route('admin.management.tags');
         }
         return back()->withErrors('Tạo tag không thành công');
     }
     public function destroy($id)
     {
         $this->tag->deleteTag($id);
-        return redirect()->route('')->with('success', 'Xóa thành công.');
+        return redirect()->route('admin.management.tags')->with('success', 'Xóa thành công.');
     }
 }

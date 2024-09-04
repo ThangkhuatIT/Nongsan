@@ -20,19 +20,28 @@
                     <div class="">
                         <select class="form-select form-select-sm" aria-label="Small select" required="" name="category">
                             @foreach ($c_aticles as $c_aticle)
-                            <option value={{ $c_aticle->name }} selected="">{{ $c_aticle->name }}</option>
+                                <option value={{ $c_aticle->name }} selected="">{{ $c_aticle->name }}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
-                <div class="gap-2 mb-6 d-flex flex-nowrap">
-                    <label class="text-nowrap">Chọn tag:</label>
-                    <div class="">
-                        <select class="form-select form-select-sm" aria-label="Small select" required="" name="tag">
-                            @foreach ($tags as $tag)
-                                <option value={{ $tag->name }} selected="">{{ $tag->name }}</option>
-                            @endforeach
-                        </select>
+                <div class="mb-6 d-flex flex-nowrap gap-3">
+                    <div class="text-nowrap">Chọn tag:</div>
+                    <div class="d-flex flex-wrap gap-2">
+                        @foreach ($tags as $index => $tag)
+                            <div class="form-check mr-4">
+                                <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="tag"
+                                    id="radio{{ $index }}"
+                                    value="{{ $tag->name }}"
+                                    {{ $loop->first ? 'checked' : '' }}>
+                                <label class="form-check-label" for="radio{{ $index }}">
+                                    {{ $tag->name }}
+                                </label>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="mb-3">

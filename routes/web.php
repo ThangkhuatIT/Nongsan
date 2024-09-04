@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\C_aticleController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 // use models
@@ -19,9 +20,7 @@ use App\Http\Middleware\NotAuthMiddleware;
 |
 */
 
-Route::get('/', function () {
-    return view('blog');
-})->name('news.index');
+Route::get('/', [HomeController::class, 'home_blog'])->name('home.blog');
 Route::get('/dashboard', function () {
     return view('dashboard.dashboard');
 })->name('dashboard');
@@ -41,8 +40,10 @@ Route::prefix('admin')->group(function () {
     Route::get('/management/tags', [TagController::class, 'index'])->name('admin.management.tags');
     // Route::get('/management/tags/createtag', [TagController::class, 'indexCreateBlog'])->name('admin.management.createblogs');
     Route::post('/management/tags/createTag', [TagController::class, 'store'])->name('admin.management.doCreateTag');
+    Route::delete('/management/tags/{id}', [TagController::class, 'destroy'])->name('admin.management.deleteTag');
 
     Route::get('/management/c_aticles', [C_aticleController::class, 'index'])->name('admin.management.c_aticles');
     // Route::get('/management/c_aticles/createC_aticle', [C_aticleController::class, 'indexCreateBlog'])->name('admin.management.createblogs');
     Route::post('/management/c_aticles/createC_aticle', [C_aticleController::class, 'store'])->name('admin.management.doCreatec_aticles');
+    Route::delete('/management/c_aticles/{id}', [C_aticleController::class, 'destroy'])->name('admin.management.deleteC_aticles');
 });

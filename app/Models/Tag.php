@@ -20,11 +20,11 @@ class Tag extends Model
     }
     public function createTag($name)
     {
-        $tags = DB::connection('mysql')->table('tag')
+        $tag = DB::connection('mysql')->table('tag')
             ->insert([
                 'name' => $name,
             ]);
-        return $tags;
+        return $tag;
     }
     public function deleteTag($id)
     {

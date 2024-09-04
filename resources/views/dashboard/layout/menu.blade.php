@@ -2,7 +2,7 @@
     <!-- Sidebar scroll-->
     <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-            <a href="{{route('news.index')}}" class="text-nowrap logo-img">
+            <a href="{{ route('news.index') }}" class="text-nowrap logo-img">
                 <img src="{{ asset('assetdashboard/images/logos/logo-light.svg') }}" alt="" />
             </a>
             <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
@@ -17,7 +17,8 @@
                     <span class="hide-menu">Home</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="{{ session('page') == 'blogs' ? 'sidebar-link active' : 'sidebar-link' }}" href="{{route('admin.management.blogs')}}" aria-expanded="false">
+                    <a class="{{ session('page') == 'blogs' ? 'sidebar-link active' : 'sidebar-link' }}"
+                        href="{{ route('admin.management.blogs') }}" aria-expanded="false">
                         <span>
                             <iconify-icon icon="solar:home-smile-bold-duotone" class="fs-6"></iconify-icon>
                         </span>
@@ -29,20 +30,21 @@
                     <span class="hide-menu">UI COMPONENTS</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="ui-buttons.html" aria-expanded="false">
+                    <a class="{{ session('page') == 'tag' ? 'sidebar-link active' : 'sidebar-link' }}"
+                        href="{{ route('admin.management.tags') }}" aria-expanded="false">
                         <span>
-                            <iconify-icon icon="solar:layers-minimalistic-bold-duotone"
-                                class="fs-6"></iconify-icon>
+                            <iconify-icon icon="solar:layers-minimalistic-bold-duotone" class="fs-6"></iconify-icon>
                         </span>
-                        <span class="hide-menu">Buttons</span>
+                        <span class="hide-menu">Quản lý tag</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="ui-alerts.html" aria-expanded="false">
+                    <a class="{{ session('page') == 'c_aticle' ? 'sidebar-link active' : 'sidebar-link' }}"
+                        href="{{ route('admin.management.c_aticles') }}" aria-expanded="false">
                         <span>
                             <iconify-icon icon="solar:danger-circle-bold-duotone" class="fs-6"></iconify-icon>
                         </span>
-                        <span class="hide-menu">Alerts</span>
+                        <span class="hide-menu">Thể loại bài đăng</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -65,8 +67,7 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="ui-typography.html" aria-expanded="false">
                         <span>
-                            <iconify-icon icon="solar:text-field-focus-bold-duotone"
-                                class="fs-6"></iconify-icon>
+                            <iconify-icon icon="solar:text-field-focus-bold-duotone" class="fs-6"></iconify-icon>
                         </span>
                         <span class="hide-menu">Typography</span>
                     </a>
@@ -87,8 +88,7 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="authentication-register.html" aria-expanded="false">
                         <span>
-                            <iconify-icon icon="solar:user-plus-rounded-bold-duotone"
-                                class="fs-6"></iconify-icon>
+                            <iconify-icon icon="solar:user-plus-rounded-bold-duotone" class="fs-6"></iconify-icon>
                         </span>
                         <span class="hide-menu">Register</span>
                     </a>

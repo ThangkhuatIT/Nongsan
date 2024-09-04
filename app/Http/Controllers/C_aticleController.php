@@ -24,13 +24,13 @@ class C_aticleController extends Controller
         $name = $request->name;
         $c_aticle = $this->c_aticle->create($name);
         if ($c_aticle) {
-            return redirect()->route('admin.management.blogs');
+            return redirect()->route('admin.management.c_aticles');
         }
         return back()->withErrors('Tạo thể loại bài viết không thành công');
     }
     public function destroy($id)
     {
         $this->c_aticle->delete_article_categorie($id);
-        return redirect()->route('tags.index')->with('success', 'Xóa thành công.');
+        return redirect()->back()->with('success', ['Thành công!', 'Bạn đã xóa tag.']);
     }
 }

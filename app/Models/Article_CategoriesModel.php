@@ -15,9 +15,11 @@ class Article_CategoriesModel extends Model
     ];
     public function create($name)
     {
-        $category = Article_CategoriesModel::create([
-            'name' => $name,
-        ]);
+        $article_categorie = DB::connection('mysql')->table('article_categories')
+            ->insert([
+                'name' => $name,
+            ]);
+        return $article_categorie;
     }
     public function delete_article_categorie($id)
     {
