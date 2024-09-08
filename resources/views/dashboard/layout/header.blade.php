@@ -30,6 +30,11 @@
             height: 100px;
             /* Đặt chiều cao là 30px */
         }
+        .btn-success {
+        background-color: #44a05b; /* Đổi màu cho nút btn-primary */
+        /* border-radius: 10px; */
+        /* padding: 12px 24px; */
+    }
     </style>
 </head>
 

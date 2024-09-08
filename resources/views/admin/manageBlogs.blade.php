@@ -3,7 +3,7 @@
 @section('main_content')
     <h3>Quản lý bài viết</h3>
     <!-- start page title -->
-    <a class="btn btn-primary waves-effect waves-light" href="{{route('admin.management.createblogs')}}"><i
+    <a class="btn btn-success waves-effect waves-light" href="{{route('admin.management.createblogs')}}"><i
             class="bx bx-edit-alt"></i> Tạo bài viết mới</a>
     <!-- end col -->
     <hr>
@@ -74,4 +74,9 @@
         </div>
         <!-- end card-body-->
     </div>
+@endsection
+@section('header')
+<style>
+
+    </style>
 @endsection
