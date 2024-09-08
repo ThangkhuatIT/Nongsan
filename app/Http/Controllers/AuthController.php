@@ -26,7 +26,7 @@ class AuthController extends Controller
             $user = $this->user->login($password, $username);
             if ($user) {
                 session()->put('user', $user);
-                return redirect()->route('dashboard');
+                return redirect()->route('admin.management.blogs');
             }
         } catch (\Exception $e) {
             return back()->withErrors($e->getMessage());

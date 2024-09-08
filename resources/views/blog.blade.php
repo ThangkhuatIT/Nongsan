@@ -135,6 +135,7 @@
                                 <a href="blog-list-right.html"><span class="icofont-double-right"></span></a>
                             </li>
                         </ul>
+                        {!! $blogs->links() !!}
                     </div>
                 </div><!-- /.row -->
             </div><!-- /.col-lg-8 -->

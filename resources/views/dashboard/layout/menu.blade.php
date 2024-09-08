@@ -2,7 +2,7 @@
     <!-- Sidebar scroll-->
     <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-            <a href="{{ route('news.index') }}" class="text-nowrap logo-img">
+            <a href="{{ route('admin.management.blogs') }}" class="text-nowrap logo-img">
                 <img src="{{ asset('assetdashboard/images/logos/logo-light.svg') }}" alt="" />
             </a>
             <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">

@@ -20,7 +20,7 @@ class Blog extends Model
     ];
     public function showNews()
     {
-        $blogs = DB::connection('mysql')->table('blogs')->paginate(10);
+        $blogs = DB::connection('mysql')->table('blogs')->paginate(2);
         return $blogs;
     }
     public function createBlog($category, $title, $context, $image, $slug, $tag)
