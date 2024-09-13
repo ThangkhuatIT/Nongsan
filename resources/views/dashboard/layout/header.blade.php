@@ -5,8 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SeoDash Free Bootstrap Admin Template by Adminmart</title>
-    <link rel="shortcut icon" type="image/png" href="{{ asset('assetdashboard/images/logos/seodashlogo.png') }}" />
+    <title>MECROP</title>
+    {{-- <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" /> --}}
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/favicons/favicon-16x16.png') }}" />
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/favicons/favicon-32x32.png') }}" />
     <link rel="stylesheet" href="{{ asset('assetdashboard/css/styles.min.css') }}" />
     @yield('header')
     <style>
