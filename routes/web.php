@@ -35,7 +35,9 @@ Route::middleware(NotAuthMiddleware::class)->prefix('auth')->group(function () {
 Route::prefix('admin')->group(function () {
     Route::get('/management/blogs', [UserController::class, 'indexBlog'])->name('admin.management.blogs');
     Route::get('/management/blogs/createBlog', [UserController::class, 'indexCreateBlog'])->name('admin.management.createblogs');
+    Route::get('/management/blogs/detail/{id}-{slug}', [UserController::class, 'indexBlogDetail'])->name('admin.management.blog.detail');
     Route::post('/management/blogs/createBlog', [UserController::class, 'doCreateBlog'])->name('admin.management.doCreateBlog');
+    Route::post('/management/blogs/find', [HomeController::class, 'find'])->name('find.new');
 
     Route::get('/management/tags', [TagController::class, 'index'])->name('admin.management.tags');
     // Route::get('/management/tags/createtag', [TagController::class, 'indexCreateBlog'])->name('admin.management.createblogs');

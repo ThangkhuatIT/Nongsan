@@ -28,6 +28,12 @@ class UserController extends Controller
         session()->put('page', 'blogs');
         return view('admin.manageBlogs', ['blogs' => $blogs]);
     }
+    public function indexBlogDetail($id)
+    {
+        $blog = $this->blog->showNewDetail($id);
+        session()->put('page', 'blogs');
+        return view('admin.manageBlogs', ['blogs' => $blog]);
+    }
     public function indexCreateBlog()
     {
         $tags = $this->tag->showtags();

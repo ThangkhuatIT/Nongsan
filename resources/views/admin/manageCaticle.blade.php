@@ -2,6 +2,7 @@
 
 @section('main_content')
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+        <i class="ti ti-plus"></i>
         Thêm Mới
     </button>
 
@@ -16,7 +17,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="dmg-register-form">
-                        <form action="{{ route('admin.management.doCreateTag') }}" method="post">
+                        <form action="{{ route('admin.management.doCreatec_aticles') }}" method="post">
                             @csrf
                             <div class="form-group has-feedback">
                                 <label for="name">Nội dung<span class="redstar"> </span></label>
@@ -56,7 +57,7 @@
                                     <form action="{{ route('admin.management.deleteTag', $c_aticle->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger waves-effect waves-light">Xóa</button>
+                                        <button type="submit" class="btn btn-danger waves-effect waves-light"><i class="ti ti-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>

@@ -23,7 +23,13 @@ class HomeController extends Controller
         $tags = $this->tag->showtags();
         $c_aticles = $this->c_aticle->showC_aticle();
         $blogs = $this->blog->showNews();
+        $recentBlogs = $this->blog->showRecentNews();
         // dd($blogs);
-        return view('blog', ['tags' => $tags, 'c_aticles' => $c_aticles, 'blogs' => $blogs]);
+        return view('blog', ['tags' => $tags, 'c_aticles' => $c_aticles, 'blogs' => $blogs, 'recentBlogs' => $recentBlogs]);
+    }
+    public function find(Request $request)
+    {
+        $blogs = $this->blog->findNew($request->title);
+        dd($blogs);
     }
 }
