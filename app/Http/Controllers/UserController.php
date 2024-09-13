@@ -50,7 +50,10 @@ class UserController extends Controller
             $request->merge(['image' => $file_name]);
         }
         $context = $request->editordata;
+       
         //xu ly đăng bài
+
+        
         $dom = new \DomDocument();
 
         $dom->loadHtml($context, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
@@ -77,7 +80,7 @@ class UserController extends Controller
 
             $image->setAttribute('src', $image_name);
         }
-        $context = $dom->saveHTML();
+        //$context = $request->editordata;
         //end xử lý đăng bài
         $tag = $request->tag;
         $category = $request->category;

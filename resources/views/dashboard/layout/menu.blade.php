@@ -14,7 +14,7 @@
             <ul id="sidebarnav">
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
-                    <span class="hide-menu">Home</span>
+                    <span class="hide-menu">Quản lý Bài Viết</span>
                 </li>
                 <li class="sidebar-item">
                     <a class="{{ session('page') == 'blogs' ? 'sidebar-link active' : 'sidebar-link' }}"
@@ -22,7 +22,7 @@
                         <span>
                             <iconify-icon icon="solar:home-smile-bold-duotone" class="fs-6"></iconify-icon>
                         </span>
-                        <span class="hide-menu">Quản lí bài viết</span>
+                        <span class="hide-menu">Đăng Blog</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -31,7 +31,7 @@
                         <span>
                             <iconify-icon icon="solar:layers-minimalistic-bold-duotone" class="fs-6"></iconify-icon>
                         </span>
-                        <span class="hide-menu">Quản lý tag</span>
+                        <span class="hide-menu">Quản Lý Tags</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -40,7 +40,7 @@
                         <span>
                             <iconify-icon icon="solar:danger-circle-bold-duotone" class="fs-6"></iconify-icon>
                         </span>
-                        <span class="hide-menu">Thể loại bài đăng</span>
+                        <span class="hide-menu">Quản Lý Danh Mục</span>
                     </a>
                 </li>
             </ul>

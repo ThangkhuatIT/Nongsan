@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@lang('StrDictionary.titlenews')</title>
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/images/favicons/apple-touch-icon.png')}}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/images/favicons/favicon-32x32.png')}}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/images/favicons/favicon-16x16.png')}}" />
+    <link rel="manifest" href="{{asset('assets/images/favicons/site.webmanifest')}}" />
     <meta name="description" content="Alefox is a modern HTML Template for agriculture field, farm, farmers, eco solutions and organic food products. Alefox HTML Template perfectly fit for all the green initiatives of the farming communities websites and businesses." />
 
     <!-- fonts -->
@@ -46,7 +46,7 @@
     <div class="custom-cursor__cursor-two"></div>
 
     <div class="preloader">
-        <div class="preloader__image" style="background-image: url(assets/images/loader.png);"></div>
+        <div class="preloader__image" style="background-image: url({{asset('assets/images/loader.png')}};"></div>
     </div>
     <!-- /.preloader -->
     <div class="page-wrapper">
@@ -81,9 +81,9 @@
 
                         </div><!-- /.topbar-one__social -->
                         <div class="topbar-one__language">
-                            <a href="#"><img src="assets/images/shapes/vietnamflag.png" alt="alefox">VI</a>
+                            <a href="#"><img src="{{asset('assets/images/shapes/vietnamflag.png')}}" alt="alefox">VI</a>
                             <div class="topbar-one__language__dropdown" style="display: none;">
-                                <a href="#"><img src="assets/images/shapes/flag.png" alt="alefox">EN</a>
+                                <a href="#"><img src="{{asset('assets/images/shapes/flag.png')}}" alt="mecrop">EN</a>
                             </div>
                         </div>
                     </div><!-- /.topbar-one__right -->
@@ -95,8 +95,8 @@
             <div class="container-fluid">
                 <div class="main-header__inner">
                     <div class="main-header__logo">
-                        <a href="index.html">
-                            <img src="assets/images/logomecrop/Mecrop_2.png" alt="Mecrop HTML" height="110">
+                        <a href="{{route('home.blog')}}">
+                            <img src="{{asset('assets/images/logomecrop/Mecrop_2.png')}}" alt="Mecrop HTML" height="110">
                         </a>
                     </div><!-- /.main-header__logo -->
 
@@ -132,7 +132,7 @@
                         <div class="main-header__call">
                             <div class="main-header__call__icon"><span class="icon-phone-call-two"></span></div>
                             <div class="main-header__call__title">Requesting a Call:</div>
-                            <a class="main-header__call__text" href="tel:84362758139">@lang("StrDictionary.phone")</a>
+                            <a class="main-header__call__text" href="tel:@lang('StrDictionary.phone')">@lang('StrDictionary.phone')</a>
                         </div><!-- /. main-header__info -->
                     </div><!-- /.main-header__right -->
                 </div><!-- /.main-header__inner -->

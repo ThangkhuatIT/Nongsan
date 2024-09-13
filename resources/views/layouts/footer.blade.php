@@ -1,98 +1,10 @@
 <footer class="main-footer background-black">
-    <div class="main-footer__bg background-black" style="background-image: url(assets/images/backgrounds/footer-bg-1-1.jpg);"></div>
     <!-- /.main-footer__bg -->
-    <div class="main-footer__top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-xl-4">
-                    <div class="footer-widget footer-widget--about">
-                        <a href="#" class="footer-widget__logo">
-                            <img src="assets/images/logo-light.png" width="147" alt="Alefox HTML Template">
-                        </a>
-                        <ul class="list-unstyled footer-widget__info">
-                            <li>
-                                <span class="footer-widget__info__icon"><i class="icofont-clock-time"></i></span>
-                                Open Hours of Government: Mon - Fri: 8.00 am. - 6.00 pm.
-                            </li>
-                            <li>
-                                <span class="footer-widget__info__icon"><i class="icofont-location-pin"></i></span>
-                                13/A, Miranda Halim City .
-                            </li>
-                            <li>
-                                <span class="footer-widget__info__icon"><i class="icofont-phone"></i></span>
-                                <a href="tel:09969569535">099 695 695 35</a>
-                            </li>
-                        </ul><!-- /.list-unstyled -->
-                        <div class="footer-widget__social">
-
-                            <a href="https://facebook.com/">
-                                <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                <span class="sr-only">Facebook</span>
-                            </a>
-                            <a href="https://pinterest.com/">
-                                <i class="fab fa-pinterest-p" aria-hidden="true"></i>
-                                <span class="sr-only">Pinterest</span>
-                            </a>
-                            <a href="https://twitter.com/">
-                                <i class="fab fa-twitter" aria-hidden="true"></i>
-                                <span class="sr-only">Twitter</span>
-                            </a>
-                            <a href="https://instagram.com/">
-                                <i class="fab fa-instagram" aria-hidden="true"></i>
-                                <span class="sr-only">Instagram</span>
-                            </a>
-                        </div><!-- /.footer-widget__social -->
-                    </div><!-- /.footer-widget -->
-                </div><!-- /.col-md-6 -->
-                <div class="col-md-6 col-xl-3">
-                    <div class="footer-widget footer-widget--links">
-                        <h2 class="footer-widget__title">Service</h2><!-- /.footer-widget__title -->
-                        <ul class="list-unstyled footer-widget__links">
-                            <li><a href="service-d-fresh.html">Always Fresh</a></li>
-                            <li><a href="service-d-organic.html">Organic Product</a></li>
-                            <li><a href="service-d-agriculture.html">Agriculture Staff</a></li>
-                            <li><a href="service-d-growth.html">Growth Providing</a></li>
-                            <li><a href="service-d-farming.html">Organic Farming</a></li>
-                        </ul><!-- /.list-unstyled footer-widget__links -->
-                    </div>
-                </div><!-- /.col-md-6 -->
-                <div class="col-md-6 col-xl-2">
-                    <div class="footer-widget footer-widget--links footer-widget--links-two">
-                        <h2 class="footer-widget__title">Links</h2><!-- /.footer-widget__title -->
-                        <ul class="list-unstyled footer-widget__links">
-                            <li><a href="checkout.html">Cookie Policy</a></li>
-                            <li><a href="products-right.html">Shop</a></li>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="about.html">About us</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                        </ul><!-- /.list-unstyled footer-widget__links -->
-                    </div><!-- /.footer-widget -->
-                </div><!-- /.col-md-6 -->
-                <div class="col-md-6 col-xl-3">
-                    <div class="footer-widget footer-widget--blog">
-                        <h5 class="footer-widget__title">Recent Posts</h5><!-- /.footer-widget__title -->
-                        <ul class="list-unstyled footer-widget__post">
-                            <li>
-                                <img src="assets/images/blog/w-1.jpg" alt="alefox">
-                                <span class="footer-widget__post__date">23 jun 2023</span>
-                                <h6 class="footer-widget__post__title"><a href="blog-details-right.html">Organic Food for Healty life</a></h6>
-                            </li>
-                            <li>
-                                <img src="assets/images/blog/w-2.jpg" alt="alefox">
-                                <span class="footer-widget__post__date">23 jun 2023</span>
-                                <h6 class="footer-widget__post__title"><a href="blog-details-right.html">Success of Score for Farmer</a></h6>
-                            </li>
-                        </ul>
-                    </div><!-- /.footer-widget -->
-                </div><!-- /.col-md-6 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </div><!-- /.main-footer__top -->
     <div class="main-footer__bottom">
         <div class="container">
             <div class="main-footer__bottom__inner">
                 <p class="main-footer__copyright">
-                    &copy; Copyright <span class="dynamic-year"></span> by Alefox HTML Template.
+                    &copy; Copyright <span class="dynamic-year"></span> by Mecrop
                 </p>
             </div><!-- /.main-footer__inner -->
         </div><!-- /.container -->
@@ -110,7 +22,7 @@
     <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
     <div class="logo-box">
-        <a href="#" aria-label="logo image"><img src="assets/images/logo-light.png" width="155" alt="" /></a>
+        <a href="#" aria-label="logo image"><img src="{{asset('assets/images/logomecrop/Mecrop_4.png')}}" width="155" alt="" /></a>
     </div>
     <!-- /.logo-box -->
 
@@ -168,7 +80,7 @@
 <div class="sidebar-one__content">
     <div class="sidebar-one__close"><i class="icofont-close-line"></i></div><!-- /.siderbar-close -->
     <div class="sidebar-one__logo">
-        <a href="#" aria-label="logo image"><img src="assets/images/logo-light.png" alt="Careox HTML" width="147"></a>
+        <a href="#" aria-label="logo image"><img src="{{asset('assets/images/logomecrop/logo_ngang.png')}}" alt="Careox HTML" width="147"></a>
     </div><!-- /.sidebar-one__logo-box -->
     <p class="sidebar-one__text">
         Mauris ut enim sit amet lacus ornare ullamcor. Praesent placerat nequ
@@ -186,26 +98,22 @@
         </li>
         <li>
             <span class="fas fa-phone-alt"></span>
-            <a href="tel:09969569535">099 695 695 35</a>
+            <a href="tel:@lang('StrDictionary.phone')">@lang('StrDictionary.phone')</a>
         </li>
     </ul>
     <div class="sidebar-one__social">
 
-        <a href="https://facebook.com/">
+        <a href="@lang('StrDictionary.fanpage')">
             <i class="fab fa-facebook-f" aria-hidden="true"></i>
             <span class="sr-only">Facebook</span>
         </a>
-        <a href="https://pinterest.com/">
-            <i class="fab fa-pinterest-p" aria-hidden="true"></i>
-            <span class="sr-only">Pinterest</span>
+        <a href="https://www.youtube.com/@Mecrop.Farming">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+            <span class="sr-only">Youtube</span>
         </a>
-        <a href="https://twitter.com/">
+        <a href="https://x.com/Mecrop_Farming">
             <i class="fab fa-twitter" aria-hidden="true"></i>
             <span class="sr-only">Twitter</span>
-        </a>
-        <a href="https://instagram.com/">
-            <i class="fab fa-instagram" aria-hidden="true"></i>
-            <span class="sr-only">Instagram</span>
         </a>
     </div><!-- /sidebar-one__socila -->
     <h4 class="sidebar-one__title">Newsletter:</h4>

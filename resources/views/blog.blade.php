@@ -22,7 +22,7 @@
                         <div class="sidebar__single sidebar__single--search">
                             <form action="{{route('find.new')}}" class="sidebar__search" method="POST">
                                 @csrf
-                                <input type="text" name="title" placeholder="Search Here..." />
+                                <input type="text" name="title" placeholder="Tìm kiếm ở đây..." />
                                 <button type="submit" aria-label="search submit">
                                     <span><i class="icon-magnifying-glass"></i></span>
                                 </button>
@@ -56,7 +56,7 @@
                                 @foreach ($recentBlogs as $recentBlog)
                                     <li class="sidebar__posts__item">
                                         <div class="sidebar__posts__image">
-                                            <img src="{{ asset('uploads/' . $recentBlog->image) }}" alt="alefox" style="height: 60px ;width:60px; object-fit:cover; border-radius:50%;">
+                                            <img src="{{ asset('uploads/' . $recentBlog->image) }}" alt="mecrop" style="height: 60px ;width:60px; object-fit:cover; border-radius:50%;">
                                         </div><!-- /.sidebar__posts__image -->
                                         <div class="sidebar__posts__content">
                                             <p class="sidebar__posts__meta"><i
@@ -94,9 +94,9 @@
                                     <ul class="list-unstyled blog-card-list__meta">
                                         <li class="blog-card-list__meta__cats"><a href="#">Organic</a></li>
                                         <li><i class="icofont-ui-user"></i>Admin: <a
-                                                href="#">Lorat</a>
+                                                href="#">Mecrop</a>
                                         </li>
-                                        <li><i class="icofont-comment"></i>Comments (5)</li>
+                                        
                                     </ul><!-- /.list-unstyled blog-card-list__meta -->
                                     <h3 class="blog-card-list__title"><a
                                             href="{{ route('admin.management.blog.detail', ['id' => $blog->id, 'slug' => $blog->slug]) }}">{{ $blog->title }}</a>
@@ -108,7 +108,7 @@
                                     <a href="{{ route('admin.management.blog.detail', ['id' => $blog->id, 'slug' => $blog->slug]) }}"
                                         class="blog-card-list__link">
                                         <i class="icofont-arrow-right"></i>
-                                        Read more
+                                        Đọc thêm
                                     </a><!-- /.blog-card-list__link -->
                                 </div><!-- /.blog-card-list__content -->
                             </div><!-- /.blog-card-list -->

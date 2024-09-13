@@ -7,7 +7,7 @@
             <div class="container">
                 <h2 class="page-header__title bw-split-in-down">Login</h2>
                 <ul class="alefox-breadcrumb list-unstyled">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{{route('home.blog')}}">Home</a></li>
                     <li><span>Login</span></li>
                 </ul><!-- /.thm-breadcrumb list-unstyled -->
             </div><!-- /.container -->

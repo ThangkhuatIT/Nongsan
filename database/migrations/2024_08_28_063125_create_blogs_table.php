@@ -24,6 +24,10 @@ return new class extends Migration
             $table->string('tag');
             $table->timestamp('created_at')->useCurrent();
         });
+        Schema::table('articles', function (Blueprint $table) {
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
+        });
     }
 
     /**
