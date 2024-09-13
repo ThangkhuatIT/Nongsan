@@ -32,7 +32,7 @@ class UserController extends Controller
     {
         $blog = $this->blog->showNewDetail($id);
         session()->put('page', 'blogs');
-        return view('admin.manageBlogs', ['blogs' => $blog]);
+        return view('blog_detail', ['blogs' => $blog]);
     }
     public function indexCreateBlog()
     {

@@ -30,6 +30,6 @@ class HomeController extends Controller
     public function find(Request $request)
     {
         $blogs = $this->blog->findNew($request->title);
-        dd($blogs);
+        return view('blog_detail', ['blogs' => $blogs]);
     }
 }
