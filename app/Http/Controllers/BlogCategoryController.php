@@ -16,7 +16,7 @@ class BlogCategoryController extends Controller
     {
         $c_aticles = $this->c_aticle->showC_aticle();
         session()->put('page', 'c_aticle');
-        return view('admin.manageCaticle', ['c_aticles' => $c_aticles]);
+        return view('admin.manage_category_blog', ['c_aticles' => $c_aticles]);
     }
 
     public function store(Request $request)

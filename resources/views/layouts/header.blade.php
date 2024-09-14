@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/images/favicons/favicon-32x32.png')}}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/images/favicons/favicon-16x16.png')}}" />
     <link rel="manifest" href="{{asset('assets/images/favicons/site.webmanifest')}}" />
-    <meta name="description" content="Alefox is a modern HTML Template for agriculture field, farm, farmers, eco solutions and organic food products. Alefox HTML Template perfectly fit for all the green initiatives of the farming communities websites and businesses." />
+    <meta name="description" content="Mecrop cung cấp các giải pháp và sản phẩm hữu cơ an toàn, nhiều dinh dưỡng, thuận nguyên lý tự nhiên. Giúp cải thiện sức khỏe, giảm tỷ lệ ung thư, cải tạo môi trường sống xung quanh. Đóng góp các giá trị tích cực cho cộng đồng ." />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -104,7 +104,7 @@
                     <nav class="main-header__nav main-menu">
                         <ul class="main-menu__list">
                             <li class="header">
-                                <a href="">@lang('StrDictionary.news')</a>
+                                <a href="{{route('home.blog')}}">@lang('StrDictionary.news')</a>
                             </li>
 
                         </ul>

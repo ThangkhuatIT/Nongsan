@@ -7,7 +7,7 @@
     <div class="container">
         <h2 class="page-header__title bw-split-in-down">@lang('StrDictionary.headerbanner')</h2>
         <ul class="alefox-breadcrumb list-unstyled">
-            <li><a href="#">@lang('StrDictionary.home')</a></li>
+            <li><a href="{{route('home.blog')}}">@lang('StrDictionary.home')</a></li>
             <li><span>@lang('StrDictionary.news')</span></li>
         </ul><!-- /.thm-breadcrumb list-unstyled -->
     </div><!-- /.container -->

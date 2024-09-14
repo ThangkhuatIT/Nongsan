@@ -22,6 +22,9 @@ use App\Http\Middleware\NotAuthMiddleware;
 */
 
 Route::get('/', [HomeController::class, 'home_blog'])->name('home.blog');
+Route::get('/management/blogs/detail/{id}-{slug}', [BlogController::class, 'indexBlogDetail'])->name('admin.management.blog.detail');
+Route::post('/management/blogs/find', [HomeController::class, 'find'])->name('find.new');
+
 Route::middleware(NotAuthMiddleware::class)->prefix('auth')->group(function () {
 
     Route::get('/login', [AuthController::class, 'index'])->name('auth.login');
@@ -32,9 +35,7 @@ Route::middleware(NotAuthMiddleware::class)->prefix('auth')->group(function () {
 Route::middleware(AuthMiddleware::class)->prefix('admin')->group(function () {
     Route::get('/management/blogs', [BlogController::class, 'indexBlog'])->name('admin.management.blogs');
     Route::get('/management/blogs/createBlog', [BlogController::class, 'indexCreateBlog'])->name('admin.management.createblogs');
-    Route::get('/management/blogs/detail/{id}-{slug}', [BlogController::class, 'indexBlogDetail'])->name('admin.management.blog.detail');
     Route::post('/management/blogs/createBlog', [BlogController::class, 'doCreateBlog'])->name('admin.management.doCreateBlog');
-    Route::post('/management/blogs/find', [HomeController::class, 'find'])->name('find.new');
 
     Route::get('/management/tags', [TagController::class, 'index'])->name('admin.management.tags');
     // Route::get('/management/tags/createtag', [TagController::class, 'indexCreateBlog'])->name('admin.management.createblogs');
