@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article_CategoriesModel;
+use App\Models\BlogCategoryModel;
 use App\Models\Blog;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -12,7 +12,7 @@ class HomeController extends Controller
     private $blog;
     private $tag;
     private $c_aticle;
-    public function __construct(Blog $blog, Tag $tag, Article_CategoriesModel $c_aticle)
+    public function __construct(Blog $blog, Tag $tag, BlogCategoryModel $c_aticle)
     {
         $this->blog = $blog;
         $this->tag = $tag;

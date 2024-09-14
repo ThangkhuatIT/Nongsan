@@ -20,7 +20,7 @@
                 <div class="sidebar">
                     <aside class="widget-area">
                         <div class="sidebar__single sidebar__single--search">
-                            <form action="{{route('find.new')}}" class="sidebar__search" method="POST">
+                            <form action="{{ route('find.new') }}" class="sidebar__search" method="POST">
                                 @csrf
                                 <input type="text" name="title" placeholder="Tìm kiếm ở đây..." />
                                 <button type="submit" aria-label="search submit">
@@ -37,18 +37,6 @@
                                 @endforeach
                             </ul><!-- /.sidebar__categories list-unstyled -->
                         </div><!-- /.sidebar__single -->
-                        {{-- <div class="sidebar__single">
-                            <h4 class="sidebar__title">Tags</h4><!-- /.sidebar__title -->
-                            <div class="sidebar__tags">
-                                <ul class="sidebar__categories list-unstyled">
-                                    @foreach ($tags as $tag)
-                                        <li><a
-                                                href="blog-details-right.html">{{ $tag->name }}</a>({{ $tag->id }})
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div><!-- /.sidebar__tags -->
-                        </div><!-- /.sidebar__single --> --}}
                         <div class="sidebar__single">
                             <h4 class="sidebar__title">Recent Post</h4><!-- /.sidebar__title -->
                             <ul class="sidebar__posts list-unstyled">
@@ -56,7 +44,8 @@
                                 @foreach ($recentBlogs as $recentBlog)
                                     <li class="sidebar__posts__item">
                                         <div class="sidebar__posts__image">
-                                            <img src="{{ asset('uploads/' . $recentBlog->image) }}" alt="mecrop" style="height: 60px ;width:60px; object-fit:cover; border-radius:50%;">
+                                            <img src="{{ asset('uploads/' . $recentBlog->image) }}" alt="mecrop"
+                                                style="height: 60px ;width:60px; object-fit:cover; border-radius:50%;">
                                         </div><!-- /.sidebar__posts__image -->
                                         <div class="sidebar__posts__content">
                                             <p class="sidebar__posts__meta"><i
@@ -93,18 +82,26 @@
                                 <div class="blog-card-list__content">
                                     <ul class="list-unstyled blog-card-list__meta">
                                         <li class="blog-card-list__meta__cats"><a href="#">Organic</a></li>
-                                        <li><i class="icofont-ui-user"></i>Admin: <a
-                                                href="#">Mecrop</a>
+                                        <li><i class="icofont-ui-user"></i>Admin: <a href="#">Mecrop</a>
                                         </li>
-                                        
+
                                     </ul><!-- /.list-unstyled blog-card-list__meta -->
                                     <h3 class="blog-card-list__title"><a
                                             href="{{ route('admin.management.blog.detail', ['id' => $blog->id, 'slug' => $blog->slug]) }}">{{ $blog->title }}</a>
                                     </h3>
                                     <!-- /.blog-card-list__title -->
-                                    <p class="blog-card-list__text">
-                                        {!! $blog->context !!}
-                                    </p><!-- /.blog-card-list__text -->
+                                    @php
+                                        $textOnly = strip_tags($blog->context);
+                                        $limitedText = Str::limit($textOnly, 300, '...');
+                                    @endphp
+                                    <p class="blog-card-list__text"
+                                        style="  display: -webkit-box;
+                                                -webkit-line-clamp: 4;
+                                                -webkit-box-orient: vertical;
+                                                overflow: hidden;
+                                                text-overflow: ellipsis;">
+                                        {!! $limitedText !!}
+                                    </p>
                                     <a href="{{ route('admin.management.blog.detail', ['id' => $blog->id, 'slug' => $blog->slug]) }}"
                                         class="blog-card-list__link">
                                         <i class="icofont-arrow-right"></i>

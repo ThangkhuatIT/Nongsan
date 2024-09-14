@@ -38,6 +38,7 @@
 
     <!-- template styles -->
     <link rel="stylesheet" href="{{asset('assets/css/alefox.css')}}" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body class="custom-cursor">

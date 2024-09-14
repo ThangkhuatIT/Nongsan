@@ -9,18 +9,18 @@ use Illuminate\Support\Facades\DB;
 class Tag extends Model
 {
     use HasFactory;
-    protected $table = 'tag';
+    protected $table = 'tags';
     protected $fillable = [
         'name'
     ];
     public function showtags()
     {
-        $tags = DB::connection('mysql')->table('tag')->get();
+        $tags = DB::connection('mysql')->table('tags')->get();
         return $tags;
     }
     public function createTag($name)
     {
-        $tag = DB::connection('mysql')->table('tag')
+        $tag = DB::connection('mysql')->table('tags')
             ->insert([
                 'name' => $name,
             ]);

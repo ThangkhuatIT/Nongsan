@@ -46,7 +46,7 @@
                     </form>
                 </div><!-- login-form -->
             </div>
+            @include('partials.swal')
         </section>
         <!-- Login End -->
-
 @include('layouts.footer')

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Article_CategoriesModel extends Model
+class BlogCategoryModel extends Model
 {
     use HasFactory;
     protected $table = 'article_categories';
@@ -23,7 +23,7 @@ class Article_CategoriesModel extends Model
     }
     public function delete_article_categorie($id)
     {
-        $category = Article_CategoriesModel::find($id);
+        $category = BlogCategoryModel::find($id);
         if ($category) {
             $deleted =  $category->delete();
             if ($deleted) return true;

@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class NotAuthMiddleware
+class AuthMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,8 +16,8 @@ class NotAuthMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (session('user')) {
-            return redirect()->route('admin.management.blogs');
+        if (!session('user')) {
+            return redirect()->route('auth.login')->with('error', 'Vui lòng đăng nhập');
         }
         return $next($request);
     }

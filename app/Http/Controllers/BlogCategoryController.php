@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article_CategoriesModel;
+use App\Models\BlogCategoryModel;
 use Illuminate\Http\Request;
 
-class C_aticleController extends Controller
+class BlogCategoryController extends Controller
 {
     private $c_aticle;
-    public function __construct(Article_CategoriesModel $c_aticle)
+    public function __construct(BlogCategoryModel $c_aticle)
     {
         $this->c_aticle = $c_aticle;
     }
