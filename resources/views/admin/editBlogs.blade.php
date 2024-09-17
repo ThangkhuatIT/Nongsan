@@ -1,32 +1,33 @@
 @extends('dashboard.dashboard')
 
 @section('main_content')
-    <h3>Tạo bài viết mới</h3>
+    <h3>Chỉnh sửa bài đăng</h3>
     <!-- start page title -->
     <div class="form-group">
 
-        <form action="{{ route('admin.management.doCreateBlog') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('admin.management.blog.edit')}}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
             <div class="col-4">
                 <div class="mb-3 form-group has-feedback">
-                    <label>Tiêu đề bài viết :</label>
-                    <input class="form-control" type="text" placeholder="Nhập tiêu đề bài viết" name="title"
+                    <label>Thay đổi tiêu đề :</label>
+                    <input class="form-control" type="text"  value="{{ $blog->title }}" name="title"
                         required="">
                     <!-- Tối thiểu 5 ký tự -->
                 </div>
 
                 <div class="gap-2 mb-6 d-flex flex-nowrap">
-                    <label class="text-nowrap">Chọn danh mục :</label>
+                    <label class="text-nowrap">Thay đổi danh mục :</label>
                     <div class="">
                         <select class="form-select form-select-sm" aria-label="Small select" required="" name="category">
                             @foreach ($c_aticles as $c_aticle)
-                                <option value={{ $c_aticle->name }} selected="">{{ $c_aticle->name }}</option>
+                                <option value={{ $c_aticle->name }} {{ $c_aticle->name == $blog->category ? 'selected' : '' }}>{{ $c_aticle->name }}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
                 <div class="mb-6 d-flex flex-nowrap gap-3">
-                    <div class="text-nowrap">Chọn tag:</div>
+                    <div class="text-nowrap">Thay đổi tag:</div>
                     <div class="d-flex flex-wrap gap-2">
                         @foreach ($tags as $index => $tag)
                             <div class="form-check mr-4">
@@ -36,7 +37,7 @@
                                     name="tag"
                                     id="radio{{ $index }}"
                                     value="{{ $tag->name }}"
-                                    {{ $loop->first ? 'checked' : '' }}>
+                                    {{ $tag->name == $blog->tag ? 'checked' : '' }}>
                                 <label class="form-check-label" for="radio{{ $index }}">
                                     {{ $tag->name }}
                                 </label>
@@ -45,15 +46,17 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="image">Chọn ảnh để đăng bài:</label>
-                    <input type="file" class="form-control-file" id="image" name="file_upload" required="">
+                    <label for="image">Thay đổi ảnh bìa bài viết:</label>
+                    <input type="file" class="form-control-file" value={{$blog->image}} id="image" name="file_upload" >
+                    <em class="text-danger">*Nếu muốn thay đổi thêm ảnh mới tại đây*</em>
                 </div>
             </div>
 
-            <label for="image">Nội dung bài viết:</label>
-            <textarea id="summernote" name="editordata"></textarea>
+            <label for="image">Thay đổi nội dung bài viết:</label>
+
+            <textarea id="summernote" name="editordata">{{$blog->context}}</textarea>
             <div class="pl-3 mt-5 row justify-content-center w-fit">
-                <button type="submit" class="btn btn-danger ">Đăng bài viêt công khai</button>
+                <button type="submit" class="btn btn-danger ">Lưu</button>
             </div>
         </form>
     </div>
@@ -63,35 +66,9 @@
     <script>
         $('#summernote').summernote({
             tabsize: 2,
-            height: 500,
-            callbacks: {
-                onImageUpload: function(files) {
-                    uploadImage(files[0]);
-                }
-            }
+            height: 500
         });
-        // xu ly upload anh
-        function uploadImage(file) {
-            //alert("clicked");
-        var formData = new FormData();
-        formData.append('_token', '{{ csrf_token() }}');
-        formData.append('file', file);
-            $.ajax({
-                url: '/upload',
-                method: 'POST',
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function(response) {
-                    var imageUrl = response.url;
-                    // Chèn ảnh vào Summernote
-                    $('#summernote').summernote('insertImage', imageUrl);
-                    console.log(response);
-                }
-            });
-        }
     </script>
-
 @endsection
 @section('header')
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>

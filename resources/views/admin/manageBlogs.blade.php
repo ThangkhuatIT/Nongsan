@@ -13,7 +13,7 @@
             <div class="table-responsive">
                 <table class="table">
                     <thead>
-                        <tr>
+                        <tr class="text-nowrap">
                             <th>ID</th>
                             <th>Tiêu Đề</th>
                             <th>Ngày đăng</th>
@@ -27,7 +27,7 @@
                                 <td>{{ $blog->title }}</td>
                                 <td>{{ $blog->created_at }}</td>
                                 <td>
-                                    <form action="#" method="">
+                                    <div class="d-flex flex-nowrap gap-1">
                                         <button type="button" class="btn btn-danger waves-effect waves-light"
                                             data-bs-toggle="modal" data-bs-target="#staticBackdrop4" title="Xóa bài viết">
                                             <i class="ti ti-trash"></i>
@@ -39,12 +39,13 @@
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="exampleModalCenterTitle">Xóa bài viết
-                                                            <span class="text-danger">1-</span>:</h5>
+                                                            <span class="text-danger">1-</span>:
+                                                        </h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        Bạn có chắc chắn muốn xóa <span class="text-danger">1-</span> hay
+                                                        Bạn có chắc chắn muốn xóa <span class="text-danger"></span> hay
                                                         không?
                                                     </div>
                                                     <div class="modal-footer">
@@ -56,13 +57,17 @@
                                                             <button type="submit"
                                                                 class="btn btn-danger waves-effect waves-light">Xóa</button>
                                                         </form>
-
-
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
+                                        <a href="{{ route('admin.management.indexEditBlog', ['id' => $blog->id]) }}">
+                                            <button class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal"
+                                                data-bs-target="#staticBackdrop3" title="Sửa bài viết">
+                                                <i class="ti ti-pencil"></i>
+                                            </button>
+                                        </a>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
@@ -73,6 +78,7 @@
         </div>
         <!-- end card-body-->
     </div>
+    @include('partials.swal')
 @endsection
 @section('header')
     <style>

@@ -40,7 +40,7 @@
             <div class="table-responsive">
                 <table class="table">
                     <thead>
-                        <tr>
+                        <tr class="text-nowrap">
                             <th>ID</th>
                             <th>Nội Dung</th>
                             <th>Ngày Tạo</th>

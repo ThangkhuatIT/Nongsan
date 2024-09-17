@@ -21,7 +21,7 @@ class Blog extends Model
     ];
     public function showNews()
     {
-        $blogs = DB::connection('mysql')->table('blogs')->paginate(2);
+        $blogs = DB::connection('mysql')->table('blogs')->orderBy('created_at', 'desc')->paginate(2);
         foreach ($blogs as $item) {
             $item->created_at = Carbon::parse($item->created_at)->format('Y-m-d');
         }
@@ -40,7 +40,7 @@ class Blog extends Model
         $results = DB::table('blogs')
             ->where('title', 'LIKE', $title)
             ->get();
-            return $results;
+        return $results;
     }
     public function showRecentNews()
     {
@@ -55,7 +55,7 @@ class Blog extends Model
     }
     public function createBlog($category, $title, $context, $image, $slug, $tag)
     {
-        $blogs = DB::connection('mysql')->table('blogs')
+        $blog = DB::connection('mysql')->table('blogs')
             ->insert([
                 'category' => $category,
                 'title' => $title,
@@ -64,7 +64,26 @@ class Blog extends Model
                 'slug' => $slug,
                 'tag' => $tag,
             ]);
-        return $blogs;
+        return $blog;
+    }
+    public function findBlog($id)
+    {
+        $blog = Blog::find($id);
+        return $blog;
+    }
+    public function editBlog($id, $category, $title, $context, $image, $slug, $tag)
+    {
+        $blog = DB::connection('mysql')->table('blogs')
+            ->where('id', $id)
+            ->update([
+                'category' => $category,
+                'title' => $title,
+                'context' => $context,
+                'image' => $image,
+                'slug' => $slug,
+                'tag' => $tag,
+            ]);
+        return $blog;
     }
     public function deleteBlog($id)
     {

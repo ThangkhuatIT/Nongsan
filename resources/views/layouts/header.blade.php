@@ -116,7 +116,7 @@
                             <span></span>
                         </div><!-- /.mobile-nav__toggler -->
                         <a href="{{route('auth.login')}}">
-                            <button class="btn btn-success">Đăng Nhập</button>
+                            <button class="btn btn-success" id="btn_login">Đăng Nhập</button>
                         </a>
                         <a href="#" class="search-toggler main-header__search">
                             <i class="icon-magnifying-glass" aria-hidden="true"></i>

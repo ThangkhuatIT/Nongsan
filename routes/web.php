@@ -36,6 +36,8 @@ Route::middleware(AuthMiddleware::class)->prefix('admin')->group(function () {
     Route::get('/management/blogs', [BlogController::class, 'indexBlog'])->name('admin.management.blogs');
     Route::get('/management/blogs/createBlog', [BlogController::class, 'indexCreateBlog'])->name('admin.management.createblogs');
     Route::post('/management/blogs/createBlog', [BlogController::class, 'doCreateBlog'])->name('admin.management.doCreateBlog');
+    Route::get('/management/blogs/indexEditBlog/{id}', [BlogController::class, 'indexEditBlog'])->name('admin.management.indexEditBlog');
+    Route::put('/management/blogs/editBlog', [BlogController::class, 'doEditBlog'])->name('admin.management.blog.edit');
 
     Route::get('/management/tags', [TagController::class, 'index'])->name('admin.management.tags');
     // Route::get('/management/tags/createtag', [TagController::class, 'indexCreateBlog'])->name('admin.management.createblogs');
@@ -46,4 +48,5 @@ Route::middleware(AuthMiddleware::class)->prefix('admin')->group(function () {
     // Route::get('/management/c_aticles/createC_aticle', [BlogCategoryController::class, 'indexCreateBlog'])->name('admin.management.createblogs');
     Route::post('/management/c_aticles/createC_aticle', [BlogCategoryController::class, 'store'])->name('admin.management.doCreatec_aticles');
     Route::delete('/management/c_aticles/{id}', [BlogCategoryController::class, 'destroy'])->name('admin.management.deleteC_aticles');
+
 });

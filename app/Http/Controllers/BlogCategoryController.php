@@ -31,6 +31,6 @@ class BlogCategoryController extends Controller
     public function destroy($id)
     {
         $this->c_aticle->delete_article_categorie($id);
-        return redirect()->back()->with('success', ['Thành công!', 'Bạn đã xóa tag.']);
+        return redirect()->back()->with('success','Bạn đã xóa tag thành công');
     }
 }

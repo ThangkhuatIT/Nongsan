@@ -24,9 +24,9 @@
                     </div><!-- /.blog-card__image -->
                     <ul class="list-unstyled blog-details__top-meta">
                         <li class="blog-details__top-meta__cats"><a href="#">Organic</a></li>
-                        <li><i class="icofont-ui-user"></i>Admin: <a href="#">Lorat</a>
+                        <li><i class="icofont-ui-user"></i>Admin: <a href="#">MECROP</a>
                         </li>
-                        
+
                         <li><i class="icofont-ui-calendar"></i>02
                             Sep 2024</li>
                     </ul><!-- /.list-unstyled blog-card__top-meta -->
@@ -60,7 +60,7 @@
                     </div><!-- /.blog-details__meta -->
                 </div><!-- /.blog-details -->
 
-                
+
             </div><!-- /.col-lg-8 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
